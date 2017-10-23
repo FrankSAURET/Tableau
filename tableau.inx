@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Tableau</_name>
+    <id>fr.electropol.tableausimple.inkscape</id>
+	<dependency type="executable" location="extensions">tableau.py</dependency>
+	<param name="active-tab" type="notebook">
+	  <page name="options" _gui-text="Options ">
+	    <param name="cols" type="int" _gui-text="Nombre de colonnes :">2</param>
+	    <param name="rows" type="int" _gui-text="Nombre de lignes :">5</param>
+		<param name="units" type="optiongroup" appearance="minimal" _gui-text="Unitées :">
+			<option value="mm">mm</option>
+			<option value="cm">cm</option>
+			<option value="in">in</option>
+			<option value="pt">pt</option>
+			<option value="px">px</option>
+		</param>
+	    <param name="width" type="float" max="1000" precision="3" _gui-text="Largeur de la cellule :">30</param>
+	    <param name="height" type="float" max="1000" precision="3" _gui-text="Hauteur de la cellule :">20</param>
+	    <param name="weight" type="float" precision="3" _gui-text="Epaisseur des traits :">0,1</param>
+		<_param name="BoiteCouleur" type="description">Couleur des traits :</param>
+		<param name="color" type="color" >65535</param>
+		<param name="round" type="float" max="1000" precision="3" _gui-text="Rayon de l'arrondi :">0</param>
+		<_param name="aiderayon" type="description">Si la valeur du rayon est 0 il n'y aura pas d'arrondi.</param>
+	  </page>
+		<page name="Aide" _gui-text="Aide ">
+			<_param name="Aide" type="description" xml:space="preserve">
+C’est un simple outil de dessin de tableau. 
+Plus spécialement créé pour l’impression laser, il ne crée qu’un chemin en ne passant qu’une seule fois sur chaque ligne.
+J’ai aussi tenté d’optimiser le déplacement en espérant que la découpeuse le respecte.
+
+Nom des fichiers de l’extension : tableau.py et tableau.inx.
+			</_param>
+		</page>	  
+	  
+	</param>
+    <effect>
+		<object-type>all</object-type>
+                <effects-menu>
+                    
+                </effects-menu>
+    </effect>
+    <script>
+	<command reldir="extensions" interpreter="python">tableau.py</command>
+    </script>
+</inkscape-extension>
+
+
