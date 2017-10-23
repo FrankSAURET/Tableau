@@ -1,7 +1,7 @@
 # inkscape-tableau
-
-inkscape-tableau 1.0
 ====================
+Version 1.0
+=====================
 
 Draw simple table with or not rounded corner.
 
