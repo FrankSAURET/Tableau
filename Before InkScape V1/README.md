@@ -1,7 +1,6 @@
 # inkscape-tableau
 -----
-Version 2020.1
-For inkscape V 1.x
+Version 1.0
 -----
 
 Draw simple table with or not rounded corner.

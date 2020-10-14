@@ -17,85 +17,33 @@ ainsi que la création d’œuvres dérivées, à condition qu’elles soient di
 identique à celle qui régit l’œuvre originale.
 """
 
-import inkex, simplestyle
+import inkex
 
-__version__ = '1.0'
+__version__ = '2020.1'
+# Version validée pour Inkscape 1.0
 
-inkex.localize()
+inkex.localization.localize()
 
-class Tableau(inkex.Effect):
-	def __init__(self):
-		inkex.Effect.__init__(self)# Initialisation de la super classe
-
+class Tableau(inkex.GenerateExtension):
+	def add_arguments(self, pars):
 		#Récupération des paramêtres
-		self.OptionParser.add_option(
-			"", "--rows", 
-			action="store", type="int",
-			dest="NbLigne", default=2,
-			help="Nombre de lignes")   
-		self.OptionParser.add_option(
-			"", "--cols", 
-			action="store", type="int",
-			dest="NbColonne", default=3,
-			help="Nombre de colonnes")  
-		self.OptionParser.add_option(
-			"", "--units", 
-			action="store", type="string",
-			dest="Unitee", default='mm',
-			help="Unitée pour la cellule")  
-		self.OptionParser.add_option(	
-			"", "--width", 
-			action="store", type="float",
-			dest="CelL", default=10,
-			help="Largeur de la cellule")  
-		self.OptionParser.add_option(
-			"", "--height", 
-			action="store", type="float",
-			dest="CelH", default=20,
-			help="Hauteur de la cellule")  
-		self.OptionParser.add_option(
-			"", "--weight", 
-			action="store", type="float",
-			dest="ETrait", default=0.1,
-			help="Epaisseur des traits")  
-		self.OptionParser.add_option(
-			"", "--color", 
-			action="store", type="string",
-			dest="Couleur", default=0,
-			help="Couleur des traits")
-		self.OptionParser.add_option(	
-			"", "--round", 
-			action="store", type="float",
-			dest="Arrondi", default=10,
-			help="Rayon de l'arrondi")  			
-		self.OptionParser.add_option(
-			"", "--active-tab",
-			action="store", type="string",
-			dest="active_tab", default='options', 
-			help="Active tab.")								 
+		pars.add_argument("--rows", type=int, dest="NbLigne", default=2, help="Nombre de lignes")
+		pars.add_argument("--cols", type=int, dest="NbColonne", default=3, help="Nombre de colonnes")
+		pars.add_argument("--units", type=str, dest="Unitee", default="mm", help="Unitée pour la cellule")
+		pars.add_argument("--width", type=float, dest="CelL", default=10.0, help="Largeur de la cellule")
+		pars.add_argument("--height", type=float, dest="CelH", default=20.0, help="Hauteur de la cellule")
+		pars.add_argument("--weight", type=float, dest="ETrait", default=0.1, help="Epaisseur des traits")
+		pars.add_argument("--color", type=inkex.Color, dest="Couleur", default=inkex.Color(0), help="Couleur des traits")
+		pars.add_argument("--round", type=float, dest="Arrondi", default=10.0, help="Rayon de l'arrondi")
+		pars.add_argument("--active-tab", type=str, dest="active_tab", default="options", help="Active tab.")
 
-	def getColorString(self, longColor, verbose=False):
-		""" Convert the long into a #RRGGBB color value
-		and transparency (0 to 1)
-		- verbose=true pops up value for us in defaults
-		"""
-		if verbose: inkex.debug("%s ="%(longColor))
-		longColor = long(longColor)
-		if longColor <0: longColor = long(longColor) & 0xFFFFFFFF
-		Transparency=format((longColor%256)/256.0,'.8f')
-		hexColor = '#' + format(longColor/256, '06X')
-		if verbose: inkex.debug("  %s for color default value"%(hexColor))
-		return [hexColor, Transparency]
-		
-	def effect(self):
-		Couleur = self.getColorString(self.options.Couleur)[0]
-		Transparence= self.getColorString(self.options.Couleur)[1]
+	def generate(self):
 		#Récupération des dimensions d'une cellule selon l'unitée
-		HauteurCellule=self.unittouu( str(self.options.CelH)  + self.options.Unitee )
-		LargeurCellule=self.unittouu( str(self.options.CelL)  + self.options.Unitee )
-		EpaisseurTrait=self.unittouu( str(self.options.ETrait)  + self.options.Unitee )
+		HauteurCellule=self.svg.unittouu( str(self.options.CelH)  + self.options.Unitee )
+		LargeurCellule=self.svg.unittouu( str(self.options.CelL)  + self.options.Unitee )
+		EpaisseurTrait=self.svg.unittouu( str(self.options.ETrait)  + self.options.Unitee )
 		
-		rf=self.unittouu(str(self.options.Arrondi)+ self.options.Unitee )
+		rf=self.svg.unittouu(str(self.options.Arrondi)+ self.options.Unitee )
 		r=str(rf)
 		#Les éléments de dessin
 		Ahd=' a '+r+','+r+' 0 0 1 '+r+','+r
@@ -105,11 +53,11 @@ class Tableau(inkex.Effect):
 		BordGauche=Ahg+Abg
 		BordDroit=' m '+r+',-'+r+Abd+Ahd
 		Croisillon=Ahd+Ahg+Abg+Abd
-		SegmentH=' h '+ str(self.unittouu( str(self.options.CelL-2*self.options.Arrondi)  + self.options.Unitee ))
-		SegmentV=' v '+ str(self.unittouu( str(self.options.CelH-2*self.options.Arrondi)  + self.options.Unitee ))
-		SegmentHNeg=' h -'+ str(self.unittouu( str(self.options.CelL-2*self.options.Arrondi)  + self.options.Unitee ))
-		DeplacementV=str(self.unittouu( str(self.options.CelH-2*self.options.Arrondi)  + self.options.Unitee ))
-					
+		SegmentH=' h '+ str(self.svg.unittouu( str(self.options.CelL-2*self.options.Arrondi)  + self.options.Unitee ))
+		SegmentV=' v '+ str(self.svg.unittouu( str(self.options.CelH-2*self.options.Arrondi)  + self.options.Unitee ))
+		SegmentHNeg=' h -'+ str(self.svg.unittouu( str(self.options.CelL-2*self.options.Arrondi)  + self.options.Unitee ))
+		DeplacementV=str(self.svg.unittouu( str(self.options.CelH-2*self.options.Arrondi)  + self.options.Unitee ))
+
 		#Tracé du tableau avec rattrapage de l'épaisseur des traits et arrondis
 		## Positionnement du début du tableau
 		y=str(rf)
@@ -147,21 +95,13 @@ class Tableau(inkex.Effect):
 				tableau_path=tableau_path+' M '+x+','+y+SegmentV			
 		
 		#Construction puis écriture du chemin
-		style = {	
+		style = inkex.Style({	
 				'fill'          : 'none',
-				'stroke'        : Couleur,
-				'stroke-width'  : EpaisseurTrait,
-				'stroke-opacity': Transparence
-				}
-		tableau_id = self.uniqueId('tableau')	
-		tableau_parent = self.current_layer
-		tableau_attributs = {
-							'd': tableau_path, 
-							'style': simplestyle.formatStyle(style),
-							'id':tableau_id
-							}
-		inkex.etree.SubElement(tableau_parent, inkex.addNS('path','svg'), tableau_attributs)
+				'stroke'        : self.options.Couleur,
+				'stroke-width'  : EpaisseurTrait
+				})
 
-if __name__ == '__main__':   
-	e = Tableau()
-	e.affect()
+		return inkex.PathElement(d=tableau_path, style=str(style))
+
+if __name__ == '__main__':
+    Tableau().run()
