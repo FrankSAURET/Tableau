@@ -10,17 +10,14 @@ Création de tableau simple pour Inkscape
 
 Codé par Frank SAURET - http://www.electropol.fr - 
 
-License : CC BY-NC-SA 3.0 FR
-Attribution + Pas d’Utilisation Commerciale + Partage dans les mêmes conditions (BY NC SA): 
-Le titulaire des droits autorise l’exploitation de l’œuvre originale à des fins non commerciales, 
-ainsi que la création d’œuvres dérivées, à condition qu’elles soient distribuées sous une licence 
-identique à celle qui régit l’œuvre originale.
+License : Public Domain
+
 """
 
 import inkex
 
-__version__ = '2020.1'
-# Version validée pour Inkscape 1.0
+__version__ = '2020.2'
+# Version validée pour Inkscape 1.02
 
 inkex.localization.localize()
 

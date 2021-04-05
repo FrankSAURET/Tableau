@@ -2,7 +2,7 @@
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
     <name>Tableau</name>
     <id>fr.electropol.tableausimple.inkscape</id>
-	<dependency type="executable" location="extensions">tableau.py</dependency>
+	<dependency type="executable" location="inx">tableau.py</dependency>
 	
 	<param name="active-tab" type="notebook">
 		<page name="options" gui-text="Options ">
@@ -10,7 +10,7 @@
 				<vbox>
 					<param name="cols" type="int" gui-text="Nombre de colonnes :">2</param>
 					<param name="rows" type="int" gui-text="Nombre de lignes :">5</param>
-					<param name="units" type="optiongroup" appearance="minimal" gui-text="Unité :">
+					<param name="units" type="optiongroup" appearance="combo" gui-text="Unité :">
 						<option value="mm" translatable="no">mm</option>
 						<option value="cm" translatable="no">cm</option>
 						<option value="in" translatable="no">in</option>
@@ -39,11 +39,11 @@ Nom des fichiers de l’extension : tableau.py, tableau.inx et tableau.svg.
 		</page>	  
 	  
 	</param>
-    <effect>
-		<object-type>all</object-type>
-                <effects-menu>
-                    
-                </effects-menu>
+    <effect needs-live-preview="true">
+        <object-type>path</object-type>
+        <effects-menu>
+            <submenu _name="Découpe Laser"/>
+        </effects-menu>
     </effect>
     <script>
 	<command reldir="extensions" interpreter="python">tableau.py</command>
