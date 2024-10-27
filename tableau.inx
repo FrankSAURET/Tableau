@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
     <name>Tableau</name>
-    <id>franksauret.tableau</id>
-	<dependency type="executable" location="inx">tableau.py</dependency>
+    <id>franksauret.Tableau</id>
+	<dependency type="executable" location="inx">Tableau.py</dependency>
 	
 	<param name="active-tab" type="notebook">
 		<page name="options" gui-text="Options ">
@@ -25,7 +25,7 @@
 					<param name="round" type="float" max="1000.0" precision="3" gui-text="Rayon de l'arrondi :">0.0</param>
 					<param name="aiderayon" type="description">Si la valeur du rayon est 0 il n'y aura pas d'arrondi.</param>
 				</vbox>
-				<image>tableau.svg</image>
+				<image>Tableau.svg</image>
 			</hbox>
 		</page>
 		<page name="Aide" gui-text="Description">
@@ -34,7 +34,7 @@ C’est un simple outil de dessin de tableau ou de cartes à jouer (coins arrond
 Plus spécialement créé pour la découpe laser, il ne crée qu’un chemin en ne passant qu’une seule fois sur chaque ligne.
 Le tracé est optimisé afin d'optimiser le déplacement du laser et donc le temps de découpe.
 
-Nom des fichiers de l’extension : tableau.py, tableau.inx et tableau.svg.
+Nom des fichiers de l’extension : Tableau.py, Tableau.inx et Tableau.svg.
 			</param>
 		</page>	  
 	  
@@ -46,7 +46,7 @@ Nom des fichiers de l’extension : tableau.py, tableau.inx et tableau.svg.
         </effects-menu>
     </effect>
     <script>
-	<command reldir="extensions" interpreter="python">tableau.py</command>
+	<command reldir="extensions" interpreter="python">Tableau.py</command>
     </script>
 </inkscape-extension>
 
