@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<name>‎Mise à jour des extensions de Frank SAURET</name>
+	<id>franksauret.Maj</id>
+		<label appearance="header">Ce script va mettre à jour toutes les extensions que j'ai créée ou retouchée.</label>
+		<label >Pour utiliser les nouvelles versions, il faut quitter toutes les occurences d'inkscape et le relancer.</label>
+
+	<effect needs-document="false" refresh-extensions="true" implements-custom-gui="false" needs-live-preview="false">
+		<object-type>all</object-type>
+		<effects-menu />
+	</effect>
+	<script>
+		<command location="inx" interpreter="python">Maj.py</command>
+	</script>
+</inkscape-extension>
