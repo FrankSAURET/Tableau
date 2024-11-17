@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Traduction \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-01 19:30+0100\n"
+"PO-Revision-Date: 2024-11-13 14:18+0100\n"
+"Last-Translator: Frank SAURET <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Tableau.inx:3
+msgid "Tableau"
+msgstr ""
+
+#: Tableau.inx:8
+msgid "Options "
+msgstr ""
+
+#: Tableau.inx:11
+msgid "Nombre de colonnes :"
+msgstr ""
+
+#: Tableau.inx:12
+msgid "Nombre de lignes :"
+msgstr ""
+
+#: Tableau.inx:13
+msgid "Unité :"
+msgstr ""
+
+#: Tableau.inx:18
+msgid "Largeur de la cellule :"
+msgstr ""
+
+#: Tableau.inx:19
+msgid "Hauteur de la cellule :"
+msgstr ""
+
+#: Tableau.inx:20
+msgid "Epaisseur des traits :"
+msgstr ""
+
+#: Tableau.inx:21
+msgid "Couleur des traits :"
+msgstr ""
+
+#: Tableau.inx:23
+msgid "Rayon de l'arrondi :"
+msgstr ""
+
+#: Tableau.inx:24
+msgid "Si la valeur du rayon est 0 il n'y aura pas d'arrondi."
+msgstr ""
+
+#: Tableau.inx:30
+msgid "Description"
+msgstr ""
+
+#: Tableau.inx:32
+msgid "\nC’est un simple outil de dessin de tableau ou de cartes à jouer (coins arrondis).\nPlus spécialement créé pour la découpe laser, il ne crée qu’un chemin en ne passant qu’une seule fois sur chaque ligne.\nLe tracé est optimisé afin d'optimiser le déplacement du laser et donc le temps de découpe.\n\nNom des fichiers de l’extension : Tableau.py, Tableau.inx et Tableau.svg."
+
+msgstr ""
+
+#: Tableau.inx:45
+msgid "Découpe Laser"
+msgstr ""

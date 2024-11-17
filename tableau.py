@@ -16,7 +16,7 @@ License : Public Domain
 
 import inkex
 
-__version__ = '2024.1'
+__version__ = '2024.2'
 # Version validée pour Inkscape 1.3
 
 inkex.localization.localize()

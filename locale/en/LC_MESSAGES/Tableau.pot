@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Traduction \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-01 19:30+0100\n"
+"PO-Revision-Date: 2024-11-13 14:18+0100\n"
+"Last-Translator: Frank SAURET <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Tableau.inx:3
+msgid "Tableau"
+msgstr "Table"
+
+#: Tableau.inx:8
+msgid "Options "
+msgstr "Options"
+
+#: Tableau.inx:11
+msgid "Nombre de colonnes :"
+msgstr "Number of columns:"
+
+#: Tableau.inx:12
+msgid "Nombre de lignes :"
+msgstr "Number of rows:"
+
+#: Tableau.inx:13
+msgid "Unité :"
+msgstr "Unit:"
+
+#: Tableau.inx:18
+msgid "Largeur de la cellule :"
+msgstr "Cell width:"
+
+#: Tableau.inx:19
+msgid "Hauteur de la cellule :"
+msgstr "Cell height:"
+
+#: Tableau.inx:20
+msgid "Epaisseur des traits :"
+msgstr "Line thickness:"
+
+#: Tableau.inx:21
+msgid "Couleur des traits :"
+msgstr "Line color:"
+
+#: Tableau.inx:23
+msgid "Rayon de l'arrondi :"
+msgstr "Corner radius:"
+
+#: Tableau.inx:24
+msgid "Si la valeur du rayon est 0 il n'y aura pas d'arrondi."
+msgstr "If the radius value is 0, there will be no rounding."
+
+#: Tableau.inx:30
+msgid "Description"
+msgstr "Description"
+
+#: Tableau.inx:32
+msgid "\nC’est un simple outil de dessin de tableau ou de cartes à jouer (coins arrondis).\nPlus spécialement créé pour la découpe laser, il ne crée qu’un chemin en ne passant qu’une seule fois sur chaque ligne.\nLe tracé est optimisé afin d'optimiser le déplacement du laser et donc le temps de découpe.\n\nNom des fichiers de l’extension : Tableau.py, Tableau.inx et Tableau.svg."
+
+msgstr "This is a simple tool for drawing tables or playing cards (rounded corners).\nSpecifically created for laser cutting, it creates only one path, passing over each line only once.\nThe path is optimized to minimize laser movement and cutting time.\n\nExtension file names: Tableau.py, Tableau.inx, and Tableau.svg."
+
+#: Tableau.inx:45
+msgid "Découpe Laser"
+msgstr "Laser Cut"

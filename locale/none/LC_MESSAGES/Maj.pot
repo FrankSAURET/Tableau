@@ -1,0 +1,30 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Traduction \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-01 19:30+0100\n"
+"PO-Revision-Date: 2024-11-13 14:18+0100\n"
+"Last-Translator: Frank SAURET <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Maj.inx:3
+msgid "‎Mise à jour des extensions de Frank SAURET"
+msgstr ""
+
+#: Maj.inx:4
+msgid "Ce script va mettre à jour toutes les extensions que j'ai créée ou retouchée."
+msgstr ""
+
+#: Maj.inx:5
+msgid "Pour utiliser les nouvelles versions, il faut quitter toutes les occurences d'inkscape et le relancer."
+msgstr ""

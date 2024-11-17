@@ -4,7 +4,7 @@ import zipfile
 import shutil
 import inkex
 
-__version__ = "2024.1"
+__version__ = "2024.2"
 
 REPO = "https://github.com/FrankSAURET"
 INKSCAPE_EXT_DIR = os.path.join(os.getenv('APPDATA'), 'inkscape', 'extensions')
@@ -48,18 +48,19 @@ def extraire_zip(zip_path, extract_to):
 def mise_a_jour():
     fichiers = lister_fichiers_inx_avec_chaine(CUR_FOLDER, 'franksauret')
     for fichier in fichiers:
-        nomzip=f"{fichier}.zip"
-        download_path = os.path.join(os.getenv('TEMP'),nomzip)
-        extract_path = os.path.join(os.getenv('TEMP'),'extension_extract')
-        NomRepoGithub = f"{REPO}/{fichier}/archive/refs/heads/main.zip"
-        download_files(NomRepoGithub, download_path)
-        # Extraire le fichier ZIP
-        extraire_zip(download_path, extract_path)
-        # Copier les fichiers dont le nom contient nom_fichier_sans_extension
-        copier_fichiers_avec_nom(extract_path, CUR_FOLDER, fichier)
-        # Clean up
-        os.remove(download_path)
-        shutil.rmtree(extract_path)
+        if fichier not in 'Mij': # Ne pas mettre à jour les fichiers Mij [ cette fonction est donc désactivée pour l'instant]
+            nomzip=f"{fichier}.zip"
+            download_path = os.path.join(os.getenv('TEMP'),nomzip)
+            extract_path = os.path.join(os.getenv('TEMP'),'extension_extract')
+            NomRepoGithub = f"{REPO}/{fichier}/archive/refs/heads/main.zip"
+            download_files(NomRepoGithub, download_path)
+            # Extraire le fichier ZIP
+            extraire_zip(download_path, extract_path)
+            # Copier les fichiers dont le nom contient nom_fichier_sans_extension
+            copier_fichiers_avec_nom(extract_path, CUR_FOLDER, fichier)
+            # Clean up
+            os.remove(download_path)
+            shutil.rmtree(extract_path)
         
 def main():
     mise_a_jour()

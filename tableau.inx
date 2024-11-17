@@ -30,12 +30,11 @@
 		</page>
 		<page name="Aide" gui-text="Description">
 			<param name="Aide" type="description" xml:space="preserve">
-C’est un simple outil de dessin de tableau ou de cartes à jouer (coins arrondis). 
+C’est un simple outil de dessin de tableau ou de cartes à jouer (coins arrondis).
 Plus spécialement créé pour la découpe laser, il ne crée qu’un chemin en ne passant qu’une seule fois sur chaque ligne.
 Le tracé est optimisé afin d'optimiser le déplacement du laser et donc le temps de découpe.
 
-Nom des fichiers de l’extension : Tableau.py, Tableau.inx et Tableau.svg.
-			</param>
+Nom des fichiers de l’extension : Tableau.py, Tableau.inx et Tableau.svg.</param>
 		</page>	  
 	  
 	</param>
