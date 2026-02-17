@@ -1,0 +1,10 @@
+{
+  "type": "InkScape extension",
+  "short_description": "Dessine un tableau avec des coins arrondis.",
+  "subject": "découpe laser",
+  "author": "Frank SAURET",
+  "version": "2020.2",
+  "download": ["Tableau/"],
+  "default_install_dir": "FrankSAURET",
+  "compatibility": ["Inkscape >= 1.2.0"]
+}
