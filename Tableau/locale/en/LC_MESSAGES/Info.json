@@ -1,0 +1,9 @@
+{
+  "type": "InkScape extension",
+  "name": "Table",
+  "short_description": "Draws a table with rounded corners.",
+  "author": "Frank SAURET",
+  "version": "2026.1",
+  "download": ["Tableau/"],
+  "repos": "https://github.com/FrankSAURET/Tableau"
+}
