@@ -3,11 +3,7 @@
   "name": "Tableau",
   "short_description": "Dessine un tableau avec des coins arrondis.Dessine un tableau avec des coins arrondis.Dessine un tableau avec des coins arrondis.Dessine un tableau avec des coins arrondis.",
   "author": "Frank SAURET",
-<<<<<<< HEAD:Tableau/info.json
   "version": "2026.1",
-=======
-  "version": "2026.2",
->>>>>>> a2468ef57410ea31de33d9c55428ef22443677b5:Tableau/Info.json
   "download": ["Tableau/"],
   "repos": "https://github.com/FrankSAURET/Tableau"
 }
